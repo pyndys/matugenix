@@ -7,6 +7,10 @@
 let
   cfg = config.programs.matugen;
   format = pkgs.formats.toml { };
+  settings = {
+    config = { };
+  }
+  // cfg.settings;
 in
 {
   options.programs.matugen = {
@@ -23,7 +27,7 @@ in
     home.packages = [ cfg.package ];
 
     xdg.configFile."matugen/config.toml" = lib.mkIf (cfg.settings != { }) {
-      source = format.generate "matugen-config.toml" cfg.settings;
+      source = format.generate "matugen-config.toml" settings;
     };
   };
 }
