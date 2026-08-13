@@ -4,6 +4,6 @@
   outputs =
     { self, ... }:
     {
-      homeManagerModules.default = import ./module.nix;
+      homeModules.default = import ./module.nix;
     };
 }
