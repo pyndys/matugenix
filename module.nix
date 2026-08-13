@@ -27,7 +27,7 @@ in
     home.packages = [ cfg.package ];
 
     xdg.configFile."matugen/config.toml" = lib.mkIf (cfg.settings != { }) {
-      source = format.generate "matugen-config.toml" settings;
+      source = format.generate "matugen-nix-config.toml" settings;
     };
   };
 }
