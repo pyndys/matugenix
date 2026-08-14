@@ -1,6 +1,43 @@
 {
   "nodes": {
-    "root": {}
+    "dms": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786667885,
+        "narHash": "sha256-caa7rUar8nJI1lCOf3phyuQ8InBA51ACAmppFpUG63E=",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "rev": "8d9c9616051e71ce6e76544f735c1794ebd59339",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "type": "github"
+      }
+    },
+    "matugen-themes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786301948,
+        "narHash": "sha256-+6Sn7LNHDdNmVb46JWbnZep0GWa8cxjo5LOpQM0yOh8=",
+        "owner": "InioX",
+        "repo": "matugen-themes",
+        "rev": "6722a8df27e179ae14ce52b8d76b6396512cd707",
+        "type": "github"
+      },
+      "original": {
+        "owner": "InioX",
+        "repo": "matugen-themes",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "dms": "dms",
+        "matugen-themes": "matugen-themes"
+      }
+    }
   },
   "root": "root",
   "version": 7
