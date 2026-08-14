@@ -17,7 +17,7 @@ in
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.helix.enable) {
     programs.matugen.settings.templates.helix = {
       input_path = "${matugen-themes}/templates/helix.toml";
-      output_path = "${config.xdg.dataHome}/helix/themes/matugenix.toml";
+      output_path = "${config.xdg.configHome}/helix/themes/matugenix.toml";
     };
 
     programs.helix.settings.theme = "matugenix";
