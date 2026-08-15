@@ -8,5 +8,6 @@
     ./gtk.nix
     ./helix.nix
     ./prismlauncher.nix
+    ./steam.nix
   ];
 }
