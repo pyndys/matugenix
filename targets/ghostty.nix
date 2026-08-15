@@ -18,7 +18,7 @@ in
     };
     terminalColors = lib.mkOption {
       type = lib.types.enum [
-        "matugenThemes"
+        "matugen"
         "dank16"
         "noctalia"
       ];
