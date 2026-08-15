@@ -26,10 +26,12 @@ in
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.helix.enable) {
     programs.matugen.settings.templates.helix = {
-      input_path = {
-        matugenThemes = "${matugen-themes}/templates/helix.toml";
-        noctalia = "${noctalia}/assets/templates/helix/helix.toml";
-      };
+      input_path =
+        {
+          matugenThemes = "${matugen-themes}/templates/helix.toml";
+          noctalia = "${noctalia}/assets/templates/helix/helix.toml";
+        }
+        .${targetCfg.themeVariant};
       output_path = "${config.xdg.configHome}/helix/themes/matugenix.toml";
     };
 
