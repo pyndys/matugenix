@@ -1,5 +1,5 @@
 {
-  import = [
+  imports = [
     ./equibop.nix
     ./vesktop.nix
   ];
