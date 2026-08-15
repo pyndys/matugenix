@@ -21,7 +21,14 @@ in
 
     targets = {
       autoEnable = lib.mkEnableOption "Auto enable targets";
-      autoDank16 = lib.mkEnableOption "Auto enable dank16 colors";
+      autoTerminalColors = lib.mkOption {
+        type = lib.types.enum [
+          "matugen"
+          "dank16"
+          "noctalia"
+        ];
+        default = "matugen";
+      };
     };
 
     settings = lib.mkOption {

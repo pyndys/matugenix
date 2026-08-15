@@ -3,6 +3,7 @@
   lib,
   matugen-themes,
   dms,
+  noctalia,
   ...
 }:
 let
@@ -15,19 +16,25 @@ in
       type = lib.types.bool;
       default = cfg.targets.autoEnable;
     };
-    dank16 = lib.mkOption {
-      type = lib.types.bool;
-      default = cfg.targets.autoDank16;
+    terminalColors = lib.mkOption {
+      type = lib.types.enum [
+        "matugenThemes"
+        "dank16"
+        "noctalia"
+      ];
+      default = cfg.targets.autoTerminalColors;
     };
   };
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.ghostty.enable) {
     programs.matugen.settings.templates.ghostty = {
       input_path =
-        if targetCfg.dank16 then
-          "${dms}/quickshell/matugen/templates/ghostty.conf"
-        else
-          "${matugen-themes}/templates/ghostty";
+        {
+          matugen = "${matugen-themes}/templates/ghostty";
+          dank16 = "${dms}/quickshell/matugen/templates/ghostty.conf";
+          noctalia = "${noctalia}/assets/templates/ghostty/ghostty";
+        }
+        .${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/ghostty/themes/matugenix";
     };
 
