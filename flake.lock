@@ -32,10 +32,44 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786715539,
+        "narHash": "sha256-/v++z9CggpnX3g94bLckf4OUAYvOIMErfOzk+xP2lBE=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "rev": "ab2cfdf6e7b93ff0dffb80fb4b406294de54430d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "type": "github"
+      }
+    },
+    "noctalia-community": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786135052,
+        "narHash": "sha256-z82bEfOdxqx8BsDX6mCnyXXKeb6xSqciCvAJ1BM6E34=",
+        "owner": "noctalia-dev",
+        "repo": "community-templates",
+        "rev": "eeb39a8a4113088d076962f5c33a2080d2f1a2e0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "community-templates",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "dms": "dms",
-        "matugen-themes": "matugen-themes"
+        "matugen-themes": "matugen-themes",
+        "noctalia": "noctalia",
+        "noctalia-community": "noctalia-community"
       }
     }
   },

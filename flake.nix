@@ -9,6 +9,14 @@
       url = "github:AvengeMedia/DankMaterialShell";
       flake = false;
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      flake = false;
+    };
+    noctalia-community = {
+      url = "github:noctalia-dev/community-templates";
+      flake = false;
+    };
   };
 
   outputs =
@@ -16,6 +24,8 @@
       self,
       matugen-themes,
       dms,
+      noctalia,
+      noctalia-community,
       ...
     }:
     {
@@ -24,6 +34,8 @@
         _module.args = {
           matugen-themes = matugen-themes;
           dms = dms;
+          noctalia = noctalia;
+          noctalia-community = noctalia-community;
         };
       };
     };
