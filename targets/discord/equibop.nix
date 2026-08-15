@@ -21,7 +21,7 @@ in
       type = lib.types.enum [
         "midnight"
         "system24"
-        "dank-midnight"
+        "dms"
         "noctalia-midnight"
         "noctalia-material"
         "noctalia-system24"
@@ -36,7 +36,7 @@ in
         {
           midnight = "${matugen-themes}/templates/midnight-discord.css";
           system24 = "${matugen-themes}/templates/system24.css";
-          dank-midnight = "${dms}/quickshell/matugen/templates/vesktop.css";
+          dms = "${dms}/quickshell/matugen/templates/vesktop.css";
           noctalia-midnight = "${noctalia-community}/discord/discord-midnight.css";
           noctalia-material = "${noctalia-community}/discord/discord-material.css";
           noctalia-system24 = "${noctalia-community}/discord/discord-system24.css";
