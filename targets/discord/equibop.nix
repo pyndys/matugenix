@@ -2,6 +2,8 @@
   config,
   lib,
   matugen-themes,
+  dms,
+  noctalia-community,
   ...
 }:
 let
@@ -19,6 +21,10 @@ in
       type = lib.types.enum [
         "midnight"
         "system24"
+        "dank-midnight"
+        "noctalia-midnight"
+        "noctalia-material"
+        "noctalia-system24"
       ];
       default = "midnight";
     };
@@ -27,11 +33,15 @@ in
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.equibop.enable) {
     programs.matugen.settings.templates.equibop = {
       input_path =
-        if targetCfg.themeVariant == "midnight" then
-          "${matugen-themes}/templates/midnight-discord.css"
-        else
-          "${matugen-themes}/templates/system24.css";
-
+        {
+          midnight = "${matugen-themes}/templates/midnight-discord.css";
+          system24 = "${matugen-themes}/templates/system24.css";
+          dank-midnight = "${dms}/quickshell/matugen/templates/vesktop.css";
+          noctalia-midnight = "${noctalia-community}/discord/discord-midnight.css";
+          noctalia-material = "${noctalia-community}/discord/discord-material.css";
+          noctalia-system24 = "${noctalia-community}/discord/discord-system24.css";
+        }
+        .${targetCfg.themeVariant};
       output_path = "${config.xdg.configHome}/equibop/themes/matugenix.css";
     };
 
