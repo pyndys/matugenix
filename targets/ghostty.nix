@@ -36,6 +36,7 @@ in
         }
         .${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/ghostty/themes/matugenix";
+      post_hook = "pkill -SIGUSR2 ghostty";
     };
 
     programs.ghostty.settings.theme = "matugenix";
