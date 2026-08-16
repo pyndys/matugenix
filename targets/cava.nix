@@ -18,6 +18,7 @@ in
     programs.matugen.settings.templates.cava = {
       input_path = "${matugen-themes}/templates/cava-colors.ini";
       output_path = "${config.xdg.configHome}/cava/themes/matugenix.ini";
+      post_hook = "pkill -USR1 cava";
     };
 
     programs.cava.settings.color.theme = "matugenix.ini";
