@@ -4,6 +4,7 @@
     ./alacritty.nix
     ./btop.nix
     ./cava.nix
+    ./fuzzel.nix
     ./ghostty.nix
     ./gtk.nix
     ./helix.nix
