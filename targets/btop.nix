@@ -18,6 +18,7 @@ in
     programs.matugen.settings.templates.btop = {
       input_path = "${matugen-themes}/templates/btop.theme";
       output_path = "${config.xdg.configHome}/btop/themes/matugenix.theme";
+      post_hook = "pkill -USR2 btop || true";
     };
 
     programs.btop.settings.color_theme = "matugenix";
