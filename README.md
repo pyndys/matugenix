@@ -2,6 +2,9 @@
 
 ### Declarative Nix configuration for [Matugen](https://github.com/InioX/matugen)
 
+## Why?
+Matugen's official module can't write its own config.toml declaratively (https://github.com/InioX/matugen/issues/60). It also doesn't automatically symlink files. Matugenix fixes both issues and adds targets like in Stylix to avoid having to write templates manually 
+
 ## Installation (via flakes)
 ```nix
 # in flake.nix
