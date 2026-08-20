@@ -1,5 +1,5 @@
 {
-  description = "Declarative Nix configuration for Matugen with dynamic color generation";
+  description = "Declarative Nix configuration for Matugen";
   inputs = {
     matugen-themes = {
       url = "github:InioX/matugen-themes";
