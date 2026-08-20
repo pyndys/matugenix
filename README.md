@@ -61,7 +61,7 @@ Targets cover common applications, but you're never blocked by what's (not yet) 
 ```nix
 { config, ... }:
 {
-  programs.matugen.settings.templates.my-app = {
+  programs.matugen.settings.templates.app = {
     input_path = ./templates/app.conf;
     output_path = "${config.xdg.configHome}/app/colors.conf";
   };
