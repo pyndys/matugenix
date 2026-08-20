@@ -56,6 +56,19 @@ You can easily manage which programs should be themed by Matugen
 }
 ```
 
+### Custom templates via `settings`
+Targets cover common applications, but you're never blocked by what's (not yet) covered - `programs.matugen.settings` accepts raw matugen configuration, merged together with whatever your enabled targets already generate:
+```nix
+{ config, ... }:
+{
+  programs.matugen.settings.templates.my-app = {
+    input_path = ./templates/app.conf;
+    output_path = "${config.xdg.configHome}/app/colors.conf";
+  };
+}
+```
+Use targets where available, drop down to `settings` for everything else - both write into the same `templates.*` namespace, so they compose freely without conflicting
+
 ## Applying the theme
 To generate and apply the colors, you need to execute matugen. You can run it manually:
 ```shell
