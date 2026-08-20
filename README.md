@@ -1,6 +1,6 @@
 # Matugenix
 
-### Declarative Nix configuration for [Matugen](https://github.com/InioX/matugen) with dynamic color generation
+### Declarative Nix configuration for [Matugen](https://github.com/InioX/matugen)
 
 ## Installation (via flakes)
 ```nix
