@@ -36,7 +36,7 @@ You can easily manage which programs should be themed by Matugen
       equibop = {
         enable = true;
         themeVariant = "system24";
-    };
+      };
       # or enable all those that have home-manager modules enabled
       autoEnable = true;
     };
