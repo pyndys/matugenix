@@ -16,7 +16,7 @@ in
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.prismlauncher.enable) {
     programs.matugen.settings.templates.prismlauncher = {
-      input_path = "${matugen-themes}/templates/prismlauncher.json";
+      input_path = "${matugen-themes}/prismlauncher.json";
       output_path = "${config.xdg.dataHome}/PrismLauncher/themes/matugenix/theme.json";
     };
 

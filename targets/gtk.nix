@@ -18,11 +18,11 @@ in
   config = lib.mkIf (cfg.enable && targetCfg.enable) {
     programs.matugen.settings.templates = {
       gtk4 = {
-        input_path = "${noctalia}/assets/templates/gtk/gtk4.css";
+        input_path = "${noctalia}/gtk/gtk4.css";
         output_path = "${config.xdg.configHome}/gtk-4.0/matugenix-colors.css";
       };
       gtk3 = {
-        input_path = "${noctalia}/assets/templates/gtk/gtk3.css";
+        input_path = "${noctalia}/gtk/gtk3.css";
         output_path = "${config.xdg.configHome}/gtk-3.0/matugenix-colors.css";
       };
     };

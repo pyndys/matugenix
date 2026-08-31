@@ -31,9 +31,9 @@ in
     programs.matugen.settings.templates.foot = {
       input_path =
         {
-          matugen = "${matugen-themes}/templates/foot-colors.ini";
-          dank16 = "${dms}/quickshell/matugen/templates/foot.ini";
-          noctalia = "${noctalia}/assets/templates/foot/foot";
+          matugen = "${matugen-themes}/foot-colors.ini";
+          dank16 = "${dms}/foot.ini";
+          noctalia = "${noctalia}/foot/foot";
         }
         .${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/foot/matugenix.ini";

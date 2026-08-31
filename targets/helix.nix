@@ -28,8 +28,8 @@ in
     programs.matugen.settings.templates.helix = {
       input_path =
         {
-          matugenThemes = "${matugen-themes}/templates/helix.toml";
-          noctalia = "${noctalia}/assets/templates/helix/helix.toml";
+          matugenThemes = "${matugen-themes}/helix.toml";
+          noctalia = "${noctalia}/helix/helix.toml";
         }
         .${targetCfg.themeVariant};
       output_path = "${config.xdg.configHome}/helix/themes/matugenix.toml";

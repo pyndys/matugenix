@@ -16,7 +16,7 @@ in
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.fuzzel.enable) {
     programs.matugen.settings.templates.fuzzel = {
-      input_path = "${matugen-themes}/templates/fuzzel.ini";
+      input_path = "${matugen-themes}/fuzzel.ini";
       output_path = "${config.xdg.configHome}/fuzzel/matugenix.ini";
     };
 

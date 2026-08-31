@@ -3,14 +3,16 @@
     "dms": {
       "flake": false,
       "locked": {
-        "lastModified": 1786667885,
-        "narHash": "sha256-caa7rUar8nJI1lCOf3phyuQ8InBA51ACAmppFpUG63E=",
+        "dir": "quickshell/matugen/templates",
+        "lastModified": 1788200445,
+        "narHash": "sha256-OifGdq5nQdDAcLzHRCzQ6bmW+lW0JOvzRrudUzPUaAk=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "8d9c9616051e71ce6e76544f735c1794ebd59339",
+        "rev": "285ce66d998bb7e5a7052e7130afe389e12e981e",
         "type": "github"
       },
       "original": {
+        "dir": "quickshell/matugen/templates",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
         "type": "github"
@@ -19,14 +21,16 @@
     "matugen-themes": {
       "flake": false,
       "locked": {
-        "lastModified": 1786301948,
-        "narHash": "sha256-+6Sn7LNHDdNmVb46JWbnZep0GWa8cxjo5LOpQM0yOh8=",
+        "dir": "templates",
+        "lastModified": 1787988654,
+        "narHash": "sha256-nUfF1KyKK2BherOwPwai6JzsrykP/zKxiAmoi7TTlvw=",
         "owner": "InioX",
         "repo": "matugen-themes",
-        "rev": "6722a8df27e179ae14ce52b8d76b6396512cd707",
+        "rev": "707c7b7d3550c9c21c0a8d72186748b1d205b88b",
         "type": "github"
       },
       "original": {
+        "dir": "templates",
         "owner": "InioX",
         "repo": "matugen-themes",
         "type": "github"
@@ -35,14 +39,16 @@
     "noctalia": {
       "flake": false,
       "locked": {
-        "lastModified": 1786715539,
-        "narHash": "sha256-/v++z9CggpnX3g94bLckf4OUAYvOIMErfOzk+xP2lBE=",
+        "dir": "assets/templates",
+        "lastModified": 1788194018,
+        "narHash": "sha256-L07VFChku0sRqtwSFyfFDFLpKPo77IPBOvrByqaTs5o=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "ab2cfdf6e7b93ff0dffb80fb4b406294de54430d",
+        "rev": "4912b92d37946ef6fd1d56cb4d2a0a0f09bd8c1c",
         "type": "github"
       },
       "original": {
+        "dir": "assets/templates",
         "owner": "noctalia-dev",
         "repo": "noctalia",
         "type": "github"

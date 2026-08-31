@@ -30,9 +30,9 @@ in
     programs.matugen.settings.templates.ghostty = {
       input_path =
         {
-          matugen = "${matugen-themes}/templates/ghostty";
-          dank16 = "${dms}/quickshell/matugen/templates/ghostty.conf";
-          noctalia = "${noctalia}/assets/templates/ghostty/ghostty";
+          matugen = "${matugen-themes}/ghostty";
+          dank16 = "${dms}/ghostty.conf";
+          noctalia = "${noctalia}/ghostty/ghostty";
         }
         .${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/ghostty/themes/matugenix";

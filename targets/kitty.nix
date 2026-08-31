@@ -31,9 +31,9 @@ in
     programs.matugen.settings.templates.kitty = {
       input_path =
         {
-          matugen = "${matugen-themes}/templates/kitty-colors.conf";
-          dank16 = "${dms}/quickshell/matugen/templates/kitty.conf";
-          noctalia = "${noctalia}/assets/templates/kitty/kitty.conf";
+          matugen = "${matugen-themes}/kitty-colors.conf";
+          dank16 = "${dms}/kitty.conf";
+          noctalia = "${noctalia}/kitty/kitty.conf";
         }
         .${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/kitty/matugenix.conf";

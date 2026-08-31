@@ -32,11 +32,11 @@ in
       {
         programs.matugen.settings.templates = {
           zen-userchrome = {
-            input_path = "${matugen-themes}/templates/zen-userchrome.css";
+            input_path = "${matugen-themes}/zen-userchrome.css";
             output_path = chromeOutput;
           };
           zen-usercontent = {
-            input_path = "${matugen-themes}/templates/zen-usercontent.css";
+            input_path = "${matugen-themes}/zen-usercontent.css";
             output_path = contentOutput;
           };
         };

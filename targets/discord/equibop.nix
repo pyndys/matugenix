@@ -34,9 +34,9 @@ in
     programs.matugen.settings.templates.equibop = {
       input_path =
         {
-          midnight = "${matugen-themes}/templates/midnight-discord.css";
-          system24 = "${matugen-themes}/templates/system24.css";
-          dms = "${dms}/quickshell/matugen/templates/vesktop.css";
+          midnight = "${matugen-themes}/midnight-discord.css";
+          system24 = "${matugen-themes}/system24.css";
+          dms = "${dms}/vesktop.css";
           noctalia-midnight = "${noctalia-community}/discord/discord-midnight.css";
           noctalia-material = "${noctalia-community}/discord/discord-material.css";
           noctalia-system24 = "${noctalia-community}/discord/discord-system24.css";

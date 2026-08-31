@@ -2,15 +2,15 @@
   description = "Declarative Nix configuration for Matugen";
   inputs = {
     matugen-themes = {
-      url = "github:InioX/matugen-themes";
+      url = "github:InioX/matugen-themes?dir=templates";
       flake = false;
     };
     dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
+      url = "github:AvengeMedia/DankMaterialShell?dir=quickshell/matugen/templates";
       flake = false;
     };
     noctalia = {
-      url = "github:noctalia-dev/noctalia";
+      url = "github:noctalia-dev/noctalia?dir=assets/templates";
       flake = false;
     };
     noctalia-community = {

@@ -16,7 +16,7 @@ in
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.cava.enable) {
     programs.matugen.settings.templates.cava = {
-      input_path = "${matugen-themes}/templates/cava-colors.ini";
+      input_path = "${matugen-themes}/cava-colors.ini";
       output_path = "${config.xdg.configHome}/cava/themes/matugenix.ini";
       post_hook = "pkill -USR1 cava";
     };

@@ -31,9 +31,9 @@ in
     programs.matugen.settings.templates.alacritty = {
       input_path =
         {
-          matugen = "${matugen-themes}/templates/alacritty.toml";
-          dank16 = "${dms}/quickshell/matugen/templates/alacritty.toml";
-          noctalia = "${noctalia}/assets/templates/alacritty/alacritty.toml";
+          matugen = "${matugen-themes}/alacritty.toml";
+          dank16 = "${dms}/alacritty.toml";
+          noctalia = "${noctalia}/alacritty/alacritty.toml";
         }
         .${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/alacritty/matugenix.toml";
