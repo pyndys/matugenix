@@ -11,7 +11,6 @@
     ./helix.nix
     ./kitty.nix
     ./prismlauncher.nix
-    ./steam.nix
     ./zen-browser.nix
   ];
 }
