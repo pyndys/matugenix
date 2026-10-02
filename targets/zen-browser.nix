@@ -2,7 +2,7 @@
   config,
   lib,
   options,
-  matugen-themes,
+  noctalia-community,
   ...
 }:
 let
@@ -32,11 +32,11 @@ in
       {
         programs.matugen.settings.templates = {
           zen-userchrome = {
-            input_path = "${matugen-themes}/zen-userchrome.css";
+            input_path = "${noctalia-community}/zen-browser/zen-userChrome.css";
             output_path = chromeOutput;
           };
           zen-usercontent = {
-            input_path = "${matugen-themes}/zen-usercontent.css";
+            input_path = "${noctalia-community}/zen-browser/zen-userContent.css";
             output_path = contentOutput;
           };
         };
