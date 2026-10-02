@@ -4,11 +4,11 @@
       "flake": false,
       "locked": {
         "dir": "quickshell/matugen/templates",
-        "lastModified": 1788200445,
-        "narHash": "sha256-OifGdq5nQdDAcLzHRCzQ6bmW+lW0JOvzRrudUzPUaAk=",
+        "lastModified": 1790956395,
+        "narHash": "sha256-5/nYQGqteiUhHtqpKOofyFYi5Ku/0YIuGWIJPyAwtrc=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "285ce66d998bb7e5a7052e7130afe389e12e981e",
+        "rev": "e4ec3582b4e04ebb8ea047aa0cf59125b2d6ef6a",
         "type": "github"
       },
       "original": {
@@ -40,11 +40,11 @@
       "flake": false,
       "locked": {
         "dir": "assets/templates",
-        "lastModified": 1788194018,
-        "narHash": "sha256-L07VFChku0sRqtwSFyfFDFLpKPo77IPBOvrByqaTs5o=",
+        "lastModified": 1790958263,
+        "narHash": "sha256-CjzvZ4ZUhJe30ziX46DHMauP/EMdddlwN9Xt1rXVISA=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "4912b92d37946ef6fd1d56cb4d2a0a0f09bd8c1c",
+        "rev": "141eb7eead5c87b41dbd96d83e752d8b5f84c549",
         "type": "github"
       },
       "original": {
@@ -57,11 +57,11 @@
     "noctalia-community": {
       "flake": false,
       "locked": {
-        "lastModified": 1786135052,
-        "narHash": "sha256-z82bEfOdxqx8BsDX6mCnyXXKeb6xSqciCvAJ1BM6E34=",
+        "lastModified": 1790731964,
+        "narHash": "sha256-lXV1isU9HWMhBt1ZLlDqBNC8sBjHaa5IZ2rgIdGMubk=",
         "owner": "noctalia-dev",
         "repo": "community-templates",
-        "rev": "eeb39a8a4113088d076962f5c33a2080d2f1a2e0",
+        "rev": "931ad2ce1719298fdd0110ff7bc196f5b94076c8",
         "type": "github"
       },
       "original": {
