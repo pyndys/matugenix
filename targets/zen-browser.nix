@@ -2,12 +2,12 @@
   config,
   lib,
   options,
-  matugen-themes,
   ...
 }:
 let
   cfg = config.programs.matugen;
   targetCfg = cfg.targets.zen-browser;
+  template = cfg.internal.templates.zen-browser;
 
   hasZen = options ? programs.zen-browser;
   zenEnabled = config.programs.zen-browser.enable or false;
@@ -32,11 +32,11 @@ in
       {
         programs.matugen.settings.templates = {
           zen-userchrome = {
-            input_path = "${matugen-themes}/zen-userchrome.css";
+            input_path = template.userchrome;
             output_path = chromeOutput;
           };
           zen-usercontent = {
-            input_path = "${matugen-themes}/zen-usercontent.css";
+            input_path = template.usercontent;
             output_path = contentOutput;
           };
         };

@@ -1,14 +1,9 @@
-{
-  config,
-  lib,
-  matugen-themes,
-  dms,
-  noctalia,
-  ...
-}:
+{ config, lib, ... }:
 let
   cfg = config.programs.matugen;
   targetCfg = cfg.targets.kitty;
+  template = cfg.internal.templates.kitty;
+  auto = cfg.targets.autoTerminalColors;
 in
 {
 
@@ -18,24 +13,14 @@ in
       default = cfg.targets.autoEnable;
     };
     terminalColors = lib.mkOption {
-      type = lib.types.enum [
-        "matugen"
-        "dank16"
-        "noctalia"
-      ];
-      default = cfg.targets.autoTerminalColors;
+      type = lib.types.enum (lib.attrNames template);
+      default = if template ? ${auto} then auto else "matugen";
     };
   };
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.kitty.enable) {
     programs.matugen.settings.templates.kitty = {
-      input_path =
-        {
-          matugen = "${matugen-themes}/kitty-colors.conf";
-          dank16 = "${dms}/kitty.conf";
-          noctalia = "${noctalia}/kitty/kitty.conf";
-        }
-        .${targetCfg.terminalColors};
+      input_path = template.${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/kitty/matugenix.conf";
     };
 

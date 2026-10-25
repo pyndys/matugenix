@@ -1,14 +1,8 @@
-{
-  config,
-  lib,
-  matugen-themes,
-  dms,
-  noctalia-community,
-  ...
-}:
+{ config, lib, ... }:
 let
   cfg = config.programs.matugen;
   targetCfg = cfg.targets.equibop;
+  template = cfg.internal.templates.discord;
 in
 {
   options.programs.matugen.targets.equibop = {
@@ -18,30 +12,14 @@ in
     };
 
     themeVariant = lib.mkOption {
-      type = lib.types.enum [
-        "midnight"
-        "system24"
-        "dms"
-        "noctalia-midnight"
-        "noctalia-material"
-        "noctalia-system24"
-      ];
+      type = lib.types.enum (lib.attrNames template);
       default = "midnight";
     };
   };
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.equibop.enable) {
     programs.matugen.settings.templates.equibop = {
-      input_path =
-        {
-          midnight = "${matugen-themes}/midnight-discord.css";
-          system24 = "${matugen-themes}/system24.css";
-          dms = "${dms}/vesktop.css";
-          noctalia-midnight = "${noctalia-community}/discord/discord-midnight.css";
-          noctalia-material = "${noctalia-community}/discord/discord-material.css";
-          noctalia-system24 = "${noctalia-community}/discord/discord-system24.css";
-        }
-        .${targetCfg.themeVariant};
+      input_path = template.${targetCfg.themeVariant};
       output_path = "${config.xdg.configHome}/equibop/themes/matugenix.css";
     };
 

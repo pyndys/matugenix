@@ -1,13 +1,8 @@
-{
-  config,
-  lib,
-  matugen-themes,
-  noctalia,
-  ...
-}:
+{ config, lib, ... }:
 let
   cfg = config.programs.matugen;
   targetCfg = cfg.targets.helix;
+  template = cfg.internal.templates.helix;
 in
 {
   options.programs.matugen.targets.helix = {
@@ -16,22 +11,14 @@ in
       default = cfg.targets.autoEnable;
     };
     themeVariant = lib.mkOption {
-      type = lib.types.enum [
-        "matugenThemes"
-        "noctalia"
-      ];
-      default = "matugenThemes";
+      type = lib.types.enum (lib.attrNames template);
+      default = "matugen";
     };
   };
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.helix.enable) {
     programs.matugen.settings.templates.helix = {
-      input_path =
-        {
-          matugenThemes = "${matugen-themes}/helix.toml";
-          noctalia = "${noctalia}/helix/helix.toml";
-        }
-        .${targetCfg.themeVariant};
+      input_path = template.${targetCfg.themeVariant};
       output_path = "${config.xdg.configHome}/helix/themes/matugenix.toml";
     };
 

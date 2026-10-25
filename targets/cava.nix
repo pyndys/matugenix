@@ -1,12 +1,8 @@
-{
-  config,
-  lib,
-  matugen-themes,
-  ...
-}:
+{ config, lib, ... }:
 let
   cfg = config.programs.matugen;
   targetCfg = cfg.targets.cava;
+  template = cfg.internal.templates.cava;
 in
 {
   options.programs.matugen.targets.cava.enable = lib.mkOption {
@@ -16,7 +12,7 @@ in
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.cava.enable) {
     programs.matugen.settings.templates.cava = {
-      input_path = "${matugen-themes}/cava-colors.ini";
+      input_path = template;
       output_path = "${config.xdg.configHome}/cava/themes/matugenix.ini";
       post_hook = "pkill -USR1 cava";
     };

@@ -1,14 +1,9 @@
-{
-  config,
-  lib,
-  matugen-themes,
-  dms,
-  noctalia,
-  ...
-}:
+{ config, lib, ... }:
 let
   cfg = config.programs.matugen;
   targetCfg = cfg.targets.ghostty;
+  template = cfg.internal.templates.ghostty;
+  auto = cfg.targets.autoTerminalColors;
 in
 {
   options.programs.matugen.targets.ghostty = {
@@ -17,24 +12,14 @@ in
       default = cfg.targets.autoEnable;
     };
     terminalColors = lib.mkOption {
-      type = lib.types.enum [
-        "matugen"
-        "dank16"
-        "noctalia"
-      ];
-      default = cfg.targets.autoTerminalColors;
+      type = lib.types.enum (lib.attrNames template);
+      default = if template ? ${auto} then auto else "matugen";
     };
   };
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.ghostty.enable) {
     programs.matugen.settings.templates.ghostty = {
-      input_path =
-        {
-          matugen = "${matugen-themes}/ghostty";
-          dank16 = "${dms}/ghostty.conf";
-          noctalia = "${noctalia}/ghostty/ghostty";
-        }
-        .${targetCfg.terminalColors};
+      input_path = template.${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/ghostty/themes/matugenix";
       post_hook = "pkill -SIGUSR2 ghostty";
     };

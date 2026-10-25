@@ -1,14 +1,9 @@
-{
-  config,
-  lib,
-  matugen-themes,
-  dms,
-  noctalia,
-  ...
-}:
+{ config, lib, ... }:
 let
   cfg = config.programs.matugen;
   targetCfg = cfg.targets.foot;
+  template = cfg.internal.templates.foot;
+  auto = cfg.targets.autoTerminalColors;
 in
 {
 
@@ -18,24 +13,14 @@ in
       default = cfg.targets.autoEnable;
     };
     terminalColors = lib.mkOption {
-      type = lib.types.enum [
-        "matugen"
-        "dank16"
-        "noctalia"
-      ];
-      default = cfg.targets.autoTerminalColors;
+      type = lib.types.enum (lib.attrNames template);
+      default = if template ? ${auto} then auto else "matugen";
     };
   };
 
   config = lib.mkIf (cfg.enable && targetCfg.enable && config.programs.foot.enable) {
     programs.matugen.settings.templates.foot = {
-      input_path =
-        {
-          matugen = "${matugen-themes}/foot-colors.ini";
-          dank16 = "${dms}/foot.ini";
-          noctalia = "${noctalia}/foot/foot";
-        }
-        .${targetCfg.terminalColors};
+      input_path = template.${targetCfg.terminalColors};
       output_path = "${config.xdg.configHome}/foot/matugenix.ini";
       post_hook = "pkill -SIGUSR1 foot";
     };

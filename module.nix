@@ -35,6 +35,14 @@ in
       type = format.type;
       default = { };
     };
+
+    internal.templates = lib.mkOption {
+      type = lib.types.attrs;
+      internal = true;
+      readOnly = true;
+      visible = false;
+      default = import ./templates { inherit pkgs; };
+    };
   };
 
   config = lib.mkIf cfg.enable {
