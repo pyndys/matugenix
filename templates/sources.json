@@ -20,8 +20,8 @@
   "noctalia": {
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "40a82f21ab5f135f4324b1862f7b7732af581856",
-    "hash": "sha256-B8Ej5CVwOWDs5B1yESLgKuBqXs5cP9+I5K4zZyntm3g=",
+    "rev": "1af14b8cdb701175bec57ddf27d070b92461024b",
+    "hash": "sha256-OQtNYzhC+UthFxGRQiMUEkbQJQmBapQlvk3Uvb8NX3s=",
     "sparseCheckout": [
       "assets/templates"
     ]
