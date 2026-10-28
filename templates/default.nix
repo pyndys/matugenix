@@ -27,29 +27,59 @@ in
     dux = "${dux}/kitty.conf";
     noctalia = "${noct}/kitty/kitty.conf";
   };
-  btop = "${mt}/btop.theme";
-  cava = "${mt}/cava-colors.ini";
+  btop = {
+    matugen = "${mt}/btop.theme";
+    noctalia = "${noct}/btop/btop.theme";
+  };
+  cava = {
+    matugen = "${mt}/cava-colors.ini";
+    noctalia = "${noct}/cava/cava.ini";
+  };
   helix = {
     matugen = "${mt}/helix.toml";
     noctalia = "${noct}/helix/helix.toml";
   };
-  fuzzel = "${mt}/fuzzel.ini";
-  prismlauncher = "${mt}/prismlauncher.json";
+  fuzzel = {
+    matugen = "${mt}/fuzzel.ini";
+    noctalia = "${nc}/fuzzel/fuzzel.conf";
+  };
+  prismlauncher = {
+    matugen = "${mt}/prismlauncher.json";
+    noctalia = "${nc}/prismlauncher/prismlauncher.json";
+  };
   gtk = {
-    gtk3 = "${noct}/gtk/gtk3.css";
-    gtk4 = "${noct}/gtk/gtk4.css";
+    matugen = "${mt}/gtk-colors.css";
+    dux = {
+      colors = "${dux}/gtk-colors.css";
+      light-colors = "${dux}/gtk-light-colors.css";
+    };
+    noctalia = {
+      gtk3 = "${noct}/gtk/gtk3.css";
+      gtk4 = "${noct}/gtk/gtk4.css";
+    };
   };
   zen-browser = {
-    userchrome = "${mt}/zen-userchrome.css";
-    usercontent = "${mt}/zen-usercontent.css";
+    matugen = {
+      userChrome = "${mt}/zen-userchrome.css";
+      userContent = "${mt}/zen-usercontent.css";
+    };
+    dux.userChrome = "${dux}/zen-userchrome.css";
+    noctalia = {
+      userChrome = "${nc}/zen-browser/zen-userChrome.css";
+      userContent = "${nc}/zen-browser/zen-userContent";
+    };
   };
   discord = {
-    midnight = "${mt}/midnight-discord.css";
-    system24 = "${mt}/system24.css";
+    matugen = {
+      midnight = "${mt}/midnight-discord.css";
+      system24 = "${mt}/system24.css";
+    };
     dms = "${dux}/vesktop.css";
-    noctalia-midnight = "${nc}/discord/discord-midnight.css";
-    noctalia-material = "${nc}/discord/discord-material.css";
-    noctalia-system24 = "${nc}/discord/discord-system24.css";
+    noctalia = {
+      midnight = "${nc}/discord/discord-midnight.css";
+      material = "${nc}/discord/discord-material.css";
+      system24 = "${nc}/discord/discord-system24.css";
+    };
   };
   steam = "${nc}/steam/steam.css";
 }
