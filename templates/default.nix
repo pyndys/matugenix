@@ -9,22 +9,22 @@ in
 {
   alacritty = {
     matugen = "${mt}/alacritty.toml";
-    dank16 = "${dux}/alacritty.toml";
+    dux = "${dux}/alacritty.toml";
     noctalia = "${noct}/alacritty/alacritty.toml";
   };
   foot = {
     matugen = "${mt}/foot-colors.ini";
-    dank16 = "${dux}/foot.ini";
+    dux = "${dux}/foot.ini";
     noctalia = "${noct}/foot/foot";
   };
   ghostty = {
     matugen = "${mt}/ghostty";
-    dank16 = "${dux}/ghostty.conf";
+    dux = "${dux}/ghostty.conf";
     noctalia = "${noct}/ghostty/ghostty";
   };
   kitty = {
     matugen = "${mt}/kitty-colors.conf";
-    dank16 = "${dux}/kitty.conf";
+    dux = "${dux}/kitty.conf";
     noctalia = "${noct}/kitty/kitty.conf";
   };
   btop = "${mt}/btop.theme";

@@ -13,43 +13,20 @@ let
   // cfg.settings;
 in
 {
-  imports = [ ./targets ];
-
   options.programs.matugen = {
     enable = lib.mkEnableOption "enable matugen";
     package = lib.mkPackageOption pkgs "matugen" { };
-
-    targets = {
-      autoEnable = lib.mkEnableOption "Auto enable targets";
-      autoTerminalColors = lib.mkOption {
-        type = lib.types.enum [
-          "matugen"
-          "dank16"
-          "noctalia"
-        ];
-        default = "matugen";
-      };
-    };
 
     settings = lib.mkOption {
       type = format.type;
       default = { };
     };
 
-    internal.templates = lib.mkOption {
-      type = lib.types.attrs;
-      internal = true;
-      readOnly = true;
-      visible = false;
-      default = import ./templates { inherit pkgs; };
-    };
-  };
-
   config = lib.mkIf cfg.enable {
     home.packages = [ cfg.package ];
 
     xdg.configFile."matugen/config.toml" = lib.mkIf (cfg.settings != { }) {
-      source = format.generate "matugenix-config.toml" settings;
+      source = format.generate "matugen-nix.toml" settings;
     };
   };
 }

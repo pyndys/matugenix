@@ -3,10 +3,11 @@
   outputs =
     { self, ... }:
     {
-      homeModules.default = ./module.nix;
+      homeModules.default = ./modules/hm.nix;
+      hjemModules.default = ./modules/hjem.nix;
       lib.templates = pkgs: import ./templates { inherit pkgs; };
       overlays.default = final: _prev: {
-        matugenix.templates = self.lib.templates final;
+        matugenTemplates = self.lib.templates final;
       };
     };
 }
