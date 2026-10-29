@@ -120,4 +120,18 @@ in
   scroll = single "noctalia" "${noct}/scroll/scroll";
   umbriel = single "noctalia" "${noct}/umbriel/umbriel.toml";
   driftwm = single "noctalia" "${nc}/driftwm/driftwm-colors";
+  qtct = withDefault "matugen" {
+    matugen = "${mt}/qtct-colors.conf";
+    dux = "${dux}/qtct-colors.conf";
+    noctalia = "${noct}/qt/qtct.conf";
+  };
+  kde = withDefault "matugen" {
+    matugen = "${mt}/Matugen.colors";
+    dux = withDefault "dark" {
+      dark = "${dux}/dark-kcolorsheme.colors";
+      light = "${dux}/light-kcolorsheme.colors";
+    };
+    noctalia = "${noct}/kde/kcolorscheme.colors";
+  };
+
 }
