@@ -1,5 +1,5 @@
 {
-  description = "Declarative Nix configuration for Matugen";
+  description = "Declarative Nix configuration and template overlay for Matugen";
   outputs =
     { self, ... }:
     {
