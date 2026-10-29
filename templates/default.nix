@@ -84,4 +84,40 @@ in
     };
   };
   steam = single "noctalia" "${nc}/steam/steam.css";
+  telegram = withDefault "matugen" {
+    matugen = "${mt}/telegram.tdesktop-theme";
+    noctalia = "${nc}/telegram/telegram.tdesktop-theme";
+  };
+  niri = withDefault "matugen" {
+    matugen = "${mt}/niri-colors.kdl";
+    dux = "${dux}/niri-colors.kdl";
+    noctalia = "${noct}/niri/niri.kdl";
+  };
+  hyprland = withDefault "matugen" {
+    matugen = withDefault "lua" {
+      lua = "${mt}/hyprland-colors.lua";
+      conf = "${mt}/hyprland-colors.conf";
+    };
+    dux = "${dux}/hypr-colors.lua";
+    noctalia = withDefault "lua" {
+      lua = "${noct}/hyprland/hyprland.lua";
+      conf = "${noct}/hyprland/hyprland.conf";
+    };
+  };
+  mango = withDefault "matugen" {
+    matugen = "${mt}/mango.conf";
+    dux = "${dux}/mango-colors.conf";
+    noctalia = "${noct}/mango/mango.conf";
+  };
+  labwc = withDefault "matugen" {
+    matugen = "${mt}/labwc";
+    noctalia = "${noct}/labwc/labwc.conf";
+  };
+  sway = withDefault "matugen" {
+    matugen = "${mt}/sway-colors.conf";
+    noctalia = "${noct}/sway/sway";
+  };
+  scroll = single "noctalia" "${noct}/scroll/scroll";
+  umbriel = single "noctalia" "${noct}/umbriel/umbriel.toml";
+  driftwm = single "noctalia" "${nc}/driftwm/driftwm-colors";
 }
