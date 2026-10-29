@@ -13,7 +13,7 @@ in
   config = lib.mkIf cfg.enable {
     packages = [ cfg.package ];
     xdg.config.files."matugen/config.toml" = lib.mkIf (cfg.settings != { }) {
-      source = (pkgs.formats.toml { }).generate "matugen-nix.toml" ({ config = { }; } // cfg.settings);
+      source = (pkgs.formats.toml { }).generate "nixugen.toml" ({ config = { }; } // cfg.settings);
     };
   };
 }
