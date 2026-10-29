@@ -5,49 +5,51 @@ let
   dux = "${src.dux}/quickshell/matugen/templates";
   noct = "${src.noctalia}/assets/templates";
   nc = "${src.noctalia-community}";
+  withDefault = default: set: set // { outPath = toString set.${default}; };
+  single = source: path: withDefault source { ${source} = path; };
 in
 {
-  alacritty = {
+  alacritty = withDefault "matugen" {
     matugen = "${mt}/alacritty.toml";
     dux = "${dux}/alacritty.toml";
     noctalia = "${noct}/alacritty/alacritty.toml";
   };
-  foot = {
+  foot = withDefault "matugen" {
     matugen = "${mt}/foot-colors.ini";
     dux = "${dux}/foot.ini";
     noctalia = "${noct}/foot/foot";
   };
-  ghostty = {
+  ghostty = withDefault "matugen" {
     matugen = "${mt}/ghostty";
     dux = "${dux}/ghostty.conf";
     noctalia = "${noct}/ghostty/ghostty";
   };
-  kitty = {
+  kitty = withDefault "matugen" {
     matugen = "${mt}/kitty-colors.conf";
     dux = "${dux}/kitty.conf";
     noctalia = "${noct}/kitty/kitty.conf";
   };
-  btop = {
+  btop = withDefault "matugen" {
     matugen = "${mt}/btop.theme";
     noctalia = "${noct}/btop/btop.theme";
   };
-  cava = {
+  cava = withDefault "matugen" {
     matugen = "${mt}/cava-colors.ini";
     noctalia = "${noct}/cava/cava.ini";
   };
-  helix = {
+  helix = withDefault "matugen" {
     matugen = "${mt}/helix.toml";
     noctalia = "${noct}/helix/helix.toml";
   };
-  fuzzel = {
+  fuzzel = withDefault "matugen" {
     matugen = "${mt}/fuzzel.ini";
     noctalia = "${nc}/fuzzel/fuzzel.conf";
   };
-  prismlauncher = {
+  prismlauncher = withDefault "matugen" {
     matugen = "${mt}/prismlauncher.json";
     noctalia = "${nc}/prismlauncher/prismlauncher.json";
   };
-  gtk = {
+  gtk = withDefault "matugen" {
     matugen = "${mt}/gtk-colors.css";
     dux = {
       colors = "${dux}/gtk-colors.css";
@@ -58,7 +60,7 @@ in
       gtk4 = "${noct}/gtk/gtk4.css";
     };
   };
-  zen-browser = {
+  zen-browser = withDefault "matugen" {
     matugen = {
       userChrome = "${mt}/zen-userchrome.css";
       userContent = "${mt}/zen-usercontent.css";
@@ -69,17 +71,17 @@ in
       userContent = "${nc}/zen-browser/zen-userContent";
     };
   };
-  discord = {
-    matugen = {
+  discord = withDefault "matugen" {
+    matugen = withDefault "midnight" {
       midnight = "${mt}/midnight-discord.css";
       system24 = "${mt}/system24.css";
     };
-    dms = "${dux}/vesktop.css";
-    noctalia = {
+    dux = "${dux}/vesktop.css";
+    noctalia = withDefault "midnight" {
       midnight = "${nc}/discord/discord-midnight.css";
       material = "${nc}/discord/discord-material.css";
       system24 = "${nc}/discord/discord-system24.css";
     };
   };
-  steam = "${nc}/steam/steam.css";
+  steam = single "noctalia" "${nc}/steam/steam.css";
 }
