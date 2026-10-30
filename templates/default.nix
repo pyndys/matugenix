@@ -133,5 +133,29 @@ in
     };
     noctalia = "${noct}/kde/kcolorscheme.colors";
   };
-
+  micro = withDefault "matugen" {
+    matugen = "${mt}/micro.micro";
+    noctalia = "${nc}/micro/noctalia.micro";
+  };
+  emacs = {
+    dux = "${dux}/dank-emacs.el";
+    noctalia = "${noct}/emacs/emacs.el";
+  };
+  zed = withDefault "matugen" {
+    matugen = "${mt}/zed-colors.json";
+    dux = "${dux}/dank-zed.json";
+    noctalia = "${nc}/zed/zed.json";
+  };
+  vscode = withDefault "matugen" {
+    matugen = {
+      raw = "${mt}/vscode-colors";
+      json = "${mt}/vscode-colors.json";
+    };
+    dux = withDefault "default" {
+      default = "${dux}/vscode-color-theme-default.json";
+      dark = "${dux}/vscode-color-theme-dark.json";
+      light = "${dux}/vscode-color-theme-light.json";
+    };
+    noctalia = "${nc}/vscode/vscode.json";
+  };
 }
